@@ -5,15 +5,15 @@ require "long_tweet/ideal_splitter"
 
 module LongTweet
   class Tweet
-    attr_reader :text
+    attr_reader :text, :tweets
     def initialize text
       @text = text
+      @tweets = Splitter.new(text)
     end
 
     def send
-      "Sending Tweet: #{text}"
+      tweets.each(&:send)
+      puts "Sending Tweet: #{text}"
     end
-
   end
-
 end

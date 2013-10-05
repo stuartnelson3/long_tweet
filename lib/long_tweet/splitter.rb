@@ -7,8 +7,7 @@ module LongTweet
     end
 
     def set_splitter
-      ary = text.split
-      if ary.any? {|e| e.length > 140 }
+      if text.split.any? {|e| e.length > 140 }
         NaiveSplitter.new text
       else
         IdealSplitter.new text
@@ -24,6 +23,5 @@ module LongTweet
     def split
       @splitter.split
     end
-
   end
 end
