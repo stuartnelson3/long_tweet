@@ -33,5 +33,4 @@ describe LongTweet::Splitter do
     last_word = first_tweet.split.last
     expect(lorem.include? last_word).to be_true
   end
-
 end

@@ -10,8 +10,9 @@ module LongTweet
       ary = text.split
       tweet = ''
       while ary.length > 0
-        while ary.length > 0 && (tweet.length + ary.shift.length) < 140
+        while (tweet.length + ary.shift.length) < 140
           tweet << " #{ary.shift}"
+          break if ary.empty?
         end
         a << tweet
         tweet = ''
