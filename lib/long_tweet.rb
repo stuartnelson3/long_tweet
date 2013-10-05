@@ -10,7 +10,12 @@ module LongTweet
     attr_reader :text, :tweets
     def initialize text
       @text = text
-      @tweets = Splitter.new(text).split
+      create_ordered_tweets
+    end
+
+    def create_tweets
+      tweets = Splitter.new(text).split
+      @tweets = Arranger.new(tweets).order
     end
 
     def post

@@ -10,7 +10,7 @@ describe LongTweet::Arranger do
   context 'sorting tweets' do
     it 'sorts in reverse by default' do
       tweets = [1,2,3,4,5]
-      expect(subject.new(tweets).arrange).to eq(tweets.reverse)
+      expect(subject.new(tweets).order).to eq(tweets.reverse)
     end
   end
 end

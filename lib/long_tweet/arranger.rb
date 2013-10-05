@@ -5,7 +5,7 @@ module LongTweet
       @tweets = tweets
     end
 
-    def arrange
+    def order
       tweets.reverse
     end
   end
