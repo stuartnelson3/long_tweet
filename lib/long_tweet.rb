@@ -3,6 +3,7 @@ require "long_tweet/splitter"
 require "long_tweet/naive_splitter"
 require "long_tweet/ideal_splitter"
 require "long_tweet/tweet"
+require "long_tweet/arranger"
 
 module LongTweet
   class Master
