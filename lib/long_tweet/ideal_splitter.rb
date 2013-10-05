@@ -14,7 +14,7 @@ module LongTweet
           tweet << " #{ary.shift}"
           break if ary.empty?
         end
-        a << tweet
+        a << Tweet.new(tweet)
         tweet = ''
       end
       a
