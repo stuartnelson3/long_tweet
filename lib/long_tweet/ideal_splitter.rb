@@ -8,14 +8,14 @@ module LongTweet
     def split
       a = []
       ary = text.split
-      tweet = ''
+      tweet = []
       while ary.length > 0
-        while (tweet.length + ary.shift.length) < 140
-          tweet << " #{ary.shift}"
+        while (tweet.length + ary.first.length) < 140
+          tweet << "#{ary.shift}"
           break if ary.empty?
         end
-        a << Tweet.new(tweet)
-        tweet = ''
+        a << Tweet.new(tweet.join(' '))
+        tweet = []
       end
       a
     end

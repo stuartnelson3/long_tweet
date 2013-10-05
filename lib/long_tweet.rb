@@ -13,7 +13,7 @@ module LongTweet
       create_ordered_tweets
     end
 
-    def create_tweets
+    def create_ordered_tweets
       tweets = Splitter.new(text).split
       @tweets = Arranger.new(tweets).order
     end
