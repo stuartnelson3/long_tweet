@@ -14,27 +14,40 @@ module LongTweet
   end
 
   class Splitter
-    attr_reader :text, :tweet_count
+    attr_reader :text
     def initialize text
       @text = text
-      set_tweet_count
+      @splitter = set_splitter
     end
 
-    def set_tweet_count
-      @tweet_count = text.length/140
-      @tweet_count += 1 if text.length.modulo(140) > 0
-    end
-
-    def split
+    def set_splitter
       ary = text.split
       if ary.any? {|e| e.length > 140 }
-        naive_split
+        NaiveSplitter.new text
       else
-        normal_split
+        IdealSplitter.new text
       end
     end
 
-    def naive_split
+    def tweet_count
+      tweet_count = text.length/140
+      tweet_count += 1 if text.length.modulo(140) > 0
+      tweet_count
+    end
+
+    def split
+      @splitter.split
+    end
+
+  end
+
+  class NaiveSplitter < Splitter
+    attr_reader :text
+    def initialize text
+      @text = text
+    end
+
+    def split
       a = []
       i = 0
       tweet_count.times do
@@ -43,8 +56,15 @@ module LongTweet
       end
       a
     end
+  end
 
-    def normal_split
+  class IdealSplitter < Splitter
+    attr_reader :text
+    def initialize text
+      @text = text
+    end
+
+    def split
       a = []
       ary = text.split
       tweet = ''
@@ -57,6 +77,6 @@ module LongTweet
       end
       a
     end
-
   end
+
 end
