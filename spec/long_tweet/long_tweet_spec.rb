@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe LongTweet::Tweet do
+describe LongTweet::Master do
   let(:text) { 'some sample text to tweet' }
 
   it 'should accept text' do
-    LongTweet::Tweet.new(text)
+    LongTweet::Master.new(text)
   end
 end
