@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = LongTweet::VERSION
   spec.authors       = ["Stuart Nelson"]
   spec.email         = ["stuartnelson3@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Create a long tweet and have it posted for your followers in top-to-bottom order}
+  spec.summary       = %q{Tweet longer tweets in order}
   spec.homepage      = ""
   spec.license       = "MIT"
 
