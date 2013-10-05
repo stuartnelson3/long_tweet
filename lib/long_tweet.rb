@@ -9,11 +9,11 @@ module LongTweet
     attr_reader :text, :tweets
     def initialize text
       @text = text
-      @tweets = Splitter.new(text)
+      @tweets = Splitter.new(text).split
     end
 
-    def send
-      tweets.each(&:send)
+    def post
+      tweets.each(&:post)
       puts "Sending Tweet: #{text}"
     end
   end

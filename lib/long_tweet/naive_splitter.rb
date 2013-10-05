@@ -9,7 +9,7 @@ module LongTweet
       a = []
       i = 0
       tweet_count.times do
-        a << text.slice(i*140,140)
+        a << Tweet.new(text.slice(i*140,140))
         i += 1
       end
       a
