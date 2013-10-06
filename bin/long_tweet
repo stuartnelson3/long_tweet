@@ -1,0 +1,8 @@
+#! usr/bin/env ruby
+
+require 'long_tweet'
+
+puts 'What would you like to tweet?'
+tweet = gets.strip
+
+LongTweet::Master.new(tweet, Twitter).post
