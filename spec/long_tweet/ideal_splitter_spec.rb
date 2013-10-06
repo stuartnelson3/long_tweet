@@ -11,6 +11,12 @@ describe LongTweet::IdealSplitter do
     expect(lorem.include? last_word).to be_true
   end
 
+  it 'doesnt exceed 140 characters when creating a tweet' do
+    splitter = LongTweet::IdealSplitter.new('a '*140)
+    text = splitter.split.first.text
+    expect(text.length < 141).to be_true
+  end
+
   it 'returns a tweet when there are < 140 characeters' do
     result = LongTweet::IdealSplitter.new('derp').split
     expect(result.first.text).to eq('derp')
