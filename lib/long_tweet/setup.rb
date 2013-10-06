@@ -24,6 +24,8 @@ module LongTweet
         gs.oauth_token_secret = @oauth_token_secret
       end
     end
+
+    trap("INT") { puts "\n\nExiting.."; exit 1 }
   end
 end
 
