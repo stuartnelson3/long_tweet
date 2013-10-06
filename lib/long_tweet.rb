@@ -8,6 +8,8 @@ require "long_tweet/config"
 require "long_tweet/setup"
 require 'twitter'
 
+trap("INT") { puts "\n\nExiting.."; exit 1 }
+
 module LongTweet
   class Master
     attr_reader :text, :tweets, :agent
