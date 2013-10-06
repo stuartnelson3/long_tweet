@@ -1,4 +1,4 @@
-require 'general_store'
+require "general_store"
 
 module LongTweet
   class Config

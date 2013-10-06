@@ -23,4 +23,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec"
 
   spec.add_dependency "twitter", "~> 4.8"
+  spec.add_dependency "general_store"
 end
