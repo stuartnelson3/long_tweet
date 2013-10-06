@@ -3,7 +3,11 @@ require 'spec_helper'
 describe LongTweet::Config do
   subject { LongTweet::Config }
 
-  it 'takes an agent as its init argument' do
-    expect { subject.new 'some agent' }.to_not raise_error
+  describe '#configure' do
+    it 'sends configure to the agent' do
+      agent = double 'agent'
+      agent.should_receive :configure
+      subject.new(agent).configure
+    end
   end
 end
